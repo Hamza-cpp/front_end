@@ -1,0 +1,100 @@
+{
+  // This ".eslintrc" file is a configuration file used by ESLint, which is a popular linting tool for JavaScript and TypeScript code.
+  // ESLint helps enforce coding style conventions, find potential errors, and improve code quality.
+
+  "root": true, //indicates that the .eslintrc file should be considered the root configuration file for ESLint
+  //This means ESLint will not look for any other configuration files in parent directories.
+  
+  "env": { //The "env" property specifies the environments where the code will run.
+    "browser": true, //the code will run on browser envirement.
+    "es2021": true //supports ECMAScript 2021 syntax.
+  },
+  "extends": [ //The "extends" property allows you to extend existing configurations.
+    "prettier",
+    "plugin:react/jsx-runtime",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "react": { //This section contains settings specific to React.
+      "createClass": "createReactClass", // Regex for Component Factory to use,
+      // default to "createReactClass"
+      "pragma": "React", // Pragma to use, default to "React"
+      "fragment": "Fragment", // Fragment to use (may be a property of <pragma>),
+      //Fragments allow you to group multiple elements without adding an additional DOM element.
+      "version": "detect", // React version. "detect" automatically picks the version you have installed.
+      "flowVersion": "0.53" //Flow is a static type checker for JavaScript.
+      //If you are using Flow in your project, you can specify the version here.
+    },
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"] //This line specifies the directories to be searched when resolving/importing modules.
+      }
+    }
+  },
+  "parser": "@babel/eslint-parser", //This parser allows ESLint to understand and analyze JavaScript code that uses modern language features and syntax, including JSX.
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "impliedStrict": true, // This enables the implied strict mode, Strict mode helps catch common mistakes and enforces better coding practices.
+      "jsx": true //This enables the parsing of JSX syntax, allowing ESLint to understand and analyze JSX code.
+    },
+    "ecmaVersion": 12 //This setting ensures that the parser recognizes and handles the syntax and features introduced in ECMAScript 2022.
+  },
+  "plugins": ["prettier", "react", "react-hooks"],
+  "rules": {
+    "react/jsx-uses-react": "error", //This rule ensures that React is imported and used correctly in JSX files. It raises an error if the React import is missing.
+    "react/jsx-uses-vars": "error", //This rule checks that variables used in JSX are declared. It raises an error if any undeclared variables are used in JSX.
+    "react/react-in-jsx-scope": "off",//: This rule disables the requirement of importing React when using JSX. By setting it to "off", it allows using JSX without explicitly importing React.
+    "no-undef": "off",// This rule disables the check for undeclared variables. By setting it to "off", it allows using variables without declaring them explicitly.
+    "react/display-name": "off",//This rule disables the requirement of having a display name for React components.
+    "react/jsx-filename-extension": "off",// This rule disables the requirement of using a specific file extension for JSX files.
+    "no-param-reassign": "off",//This rule disables the modification of function parameters. By setting it to "off", it allows reassigning and modifying function parameters.
+    "react/prop-types": 1,//This rule warns when using PropTypes for React component props, reminding you to define prop types.
+    "react/require-default-props": "off",// This rule disables the requirement of having default props for React component props.
+    "react/no-array-index-key": "off",//This rule allows using array indexes as keys in React components.
+    "react/jsx-props-no-spreading": "off",//This rule allows using the spread operator (...) to pass props in JSX.
+    "react/forbid-prop-types": "off",//This rule allows using any type for prop types in React components.
+    "import/order": "off",//This rule disables the requirement of a specific import order.
+    "import/no-cycle": "off",//This rule allows circular dependencies in import statements.
+    "no-console": "off",// This rule disables the use of console.log and other console methods.
+    "jsx-a11y/anchor-is-valid": "off",// This rule disables the requirement of valid anchors in JSX. It allows using anchor elements without the href attribute.
+    "prefer-destructuring": "off",// This rule disables the preference for using destructuring assignment.
+    "no-shadow": "off",//This rule allows redeclaration of variables with the same name in different scopes.
+    "import/no-named-as-default": "off",//This rule allows using named imports as defaults.
+    "import/no-extraneous-dependencies": "off",//This rule allows importing dependencies that are not explicitly listed in package.json.
+    "jsx-a11y/no-autofocus": "off",//This rule allows using the autofocus attribute in JSX.
+    "no-restricted-imports": [
+      //This rule restricts certain imports based on patterns.
+      //In this case, it restricts imports from paths starting with @mui/ and allows an exception for the path @mui/material/test-utils/*.
+      "error",
+      {
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
+      }
+    ],
+    "no-unused-vars": [
+      //This rule raises an error for unused variables.
+      //The "ignoreRestSiblings": false setting ensures that unused rest siblings (...rest) in destructuring assignments are not ignored.
+      "error",
+      {
+        "ignoreRestSiblings": false
+      }
+    ],
+    "prettier/prettier": [
+      // This rule configures the integration between ESLint and Prettier.
+      //The provided configuration specifies various formatting options for Prettier, such as bracket spacing, print width, single quotes, trailing commas, tab width, and end-of-line characters.
+      "warn",
+      {
+        "bracketSpacing": true,
+        "printWidth": 140,
+        "singleQuote": true,
+        "trailingComma": "none",
+        "tabWidth": 2,
+        "useTabs": false,
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

@@ -47,7 +47,7 @@ const UpgradePlanCard = () => (
         </Grid>
         <Grid item>
           <Typography variant="subtitle2" color="grey.900" sx={{ opacity: 0.6 }}>
-            70% discount for 1 years <br />
+            45% discount for 1 years <br />
             subscriptions.
           </Typography>
         </Grid>

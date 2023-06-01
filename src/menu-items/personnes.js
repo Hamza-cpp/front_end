@@ -9,11 +9,11 @@ const icons = {
   IconWindmill
 };
 
-// ==============================|| UTILITIES MENU ITEMS ||============================== //
+// ==============================|| PERSONNES MENU ITEMS ||============================== //
 
-const utilities = {
-  id: 'utilities',
-  title: 'Utilities',
+const personnes = {
+  id: 'personnes',
+  title: 'Personnes',
   type: 'group',
   children: [
     {
@@ -63,8 +63,16 @@ const utilities = {
           breadcrumbs: false
         }
       ]
+    },
+    {
+      id: 'visitors',
+      title: 'Visitors',
+      type: 'item',
+      url: '/utils/util-typography',
+      icon: 'll',
+      breadcrumbs: false
     }
   ]
 };
 
-export default utilities;
+export default personnes;

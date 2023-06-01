@@ -52,7 +52,7 @@ const Customization = () => {
   };
 
   useEffect(() => {
-    dispatch({ type: SET_BORDER_RADIUS, borderRadius });
+    dispatch({ type: SET_BORDER_RADIUS, borderRadius: borderRadius });
   }, [dispatch, borderRadius]);
 
   let initialFont;

@@ -1,12 +1,15 @@
 import dashboard from './dashboard';
+import auth from './auth';
 import parking from './parking';
 import personnes from './personnes';
-import other from './other';
+import user from './user';
+// import other from './other';
+// import utils from './utils';
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-  items: [dashboard, parking, personnes, other]
+  items: [dashboard, personnes, parking, user, auth]
 };
 
 export default menuItems;

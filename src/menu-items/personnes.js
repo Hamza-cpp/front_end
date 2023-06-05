@@ -1,15 +1,13 @@
 // assets
-import { IconTypography, IconPalette, IconShadow, IconWindmill } from '@tabler/icons';
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import SupervisedUserCircleOutlinedIcon from '@mui/icons-material/SupervisedUserCircleOutlined';
 
 // constant
 const icons = {
-  IconTypography,
-  IconPalette,
-  IconShadow,
-  IconWindmill
+    GroupOutlinedIcon, SupervisedUserCircleOutlinedIcon
 };
 
-// ==============================|| PERSONNES MENU ITEMS ||============================== //
+// ==============================|| UTILS MENU ITEMS ||============================== //
 
 const personnes = {
   id: 'personnes',
@@ -17,59 +15,19 @@ const personnes = {
   type: 'group',
   children: [
     {
-      id: 'util-typography',
-      title: 'Typography',
+      id: 'employes',
+      title: 'Employes',
       type: 'item',
-      url: '/utils/util-typography',
-      icon: icons.IconTypography,
+      url: '#',
+      icon: icons.GroupOutlinedIcon,
       breadcrumbs: false
-    },
-    {
-      id: 'util-color',
-      title: 'Color',
-      type: 'item',
-      url: '/utils/util-color',
-      icon: icons.IconPalette,
-      breadcrumbs: false
-    },
-    {
-      id: 'util-shadow',
-      title: 'Shadow',
-      type: 'item',
-      url: '/utils/util-shadow',
-      icon: icons.IconShadow,
-      breadcrumbs: false
-    },
-    {
-      id: 'icons',
-      title: 'Icons',
-      type: 'collapse',
-      icon: icons.IconWindmill,
-      children: [
-        {
-          id: 'tabler-icons',
-          title: 'Tabler Icons',
-          type: 'item',
-          url: '/icons/tabler-icons',
-          breadcrumbs: false
-        },
-        {
-          id: 'material-icons',
-          title: 'Material Icons',
-          type: 'item',
-          external: true,
-          target: '_blank',
-          url: 'https://mui.com/material-ui/material-icons/',
-          breadcrumbs: false
-        }
-      ]
     },
     {
       id: 'visitors',
       title: 'Visitors',
       type: 'item',
-      url: '/utils/util-typography',
-      icon: 'll',
+      url: '/utils/util-color',
+      icon: icons.SupervisedUserCircleOutlinedIcon,
       breadcrumbs: false
     }
   ]
